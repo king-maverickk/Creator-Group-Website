@@ -1,0 +1,29 @@
+:root {
+    color-scheme: light;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100svh;
+    background: #F6F7F9;
+    overflow: hidden;
+}
+
+#dotty-background {
+    position: fixed;
+    inset: 0;
+    background: #F6F7F9;
+    overflow: hidden;
+}
+
+.dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.08);
+    pointer-events: none;
+}
