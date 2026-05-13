@@ -1,0 +1,42 @@
+I'm creating a website for a group. I am creating the hero section currently for the home page. I have a strong visual look in my head but I'm struggling to reproduce to the high quality I expect it at, and the group's high standard. I need you translate our high quality vision into the look we're envisioning. 
+
+I have attached a zip file with:
+- A screenshot of the drafted hero section I made in Figma. It's basically what we want but it's just falling short. 
+- the html, css and js file of the hero section I actually have, which is really subpar. The quality is lackluster but a start.
+- a short style guide titled "style guide rough draft.png". Use this for fonts and colors
+- a collection of images for inspiration for you to use. They are prefixed with "inspo [number] - [a short description about what I like about the image elements and what to apply based on that]". 
+- a few 3d images of symbols I would like to use.
+
+---
+
+Use the below to guide you more on achieving the goal of making a pretty and high quality website/hero section. 
+
+Components:
+
+- Name front and center and large (on all screen sizes)
+- oversized cursor
+- emoticons 
+- 3D symbols/components
+	- 3D folder
+	- pens
+	- others
+- changing text (the font changing by character using GSAP)
+- pens on the edge of the screen
+- handwritten notes (shorthand and regular) (gochi hand + figma hand fonts)
+- screenshots of some web design/graphic designs
+- "MEET UP: TBA"
+- color pallette (brand design)
+- more doodles (tbd)
+
+vibe:
+
+- digital notebook-style 
+- cluttered but not really
+- the vibe of creative artist who has a lot of stickers
+
+constraints:
+- most of the components must stay on screen. We dont want too many of our components to be cut off by being too far right or left or up or down. Some can be on mobile, we can understand that, but at least have their edges be partly on screen if you can help it.
+
+---
+
+Go through the zip and then ask me questions to clarify any assumptions and uncertainties before you start to code the solution.

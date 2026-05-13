@@ -1,0 +1,93 @@
+:root {
+    color-scheme: light;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100svh;
+    background: #F6F7F9;
+    overflow: hidden;
+}
+
+#dotty-background {
+    position: fixed;
+    inset: 0;
+    background: #F6F7F9;
+    overflow: hidden;
+}
+
+.dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.08);
+    pointer-events: none;
+}
+
+.hero-section {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100svh;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-content-wrapper {
+    position: relative;
+    display: inline-block; /* Makes the div only as wide as the text */
+    padding: 40px;         /* Buffer zone: increase this if stickers get cut off */
+}
+
+.large-hero-text {
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    font-size: clamp(3rem, 8vw, 6rem);
+    color: #161A1D;
+    line-height: 1;
+    margin: 0;
+}
+
+.sticker {
+    position: absolute;
+    white-space: nowrap;
+    z-index: 10;
+    pointer-events: auto; /* Make sure you can still click them if needed */
+}
+
+.yellow-pill {
+    background: #FFE135;
+    font-family: "ADLaM Display", sans-serif;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid #161A1D;
+    bottom: -10px;  /* Positions relative to the text wrapper */
+    right: 20px;
+    transform: rotate(-5deg);
+}
+
+.welcome-note {
+    font-family: "Gochi Hand", cursive;
+    color: #0C8CE9;
+    top: -20px;
+    left: -10px;
+    transform: rotate(-8deg);
+    font-size: 1.5rem;
+}
+
+.media-bottom-left {
+    bottom: -10px;
+    left: 20px;
+    transform: rotate(5deg);
+    padding: 6px 12px;
+    border-radius: 999px;
+    width: 100px;
+}
+
