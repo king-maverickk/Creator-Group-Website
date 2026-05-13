@@ -50,6 +50,12 @@ body {
     padding: 2rem;
 }
 
+@media (max-width: 768px) {
+    .hero-container {
+        padding: 1rem;
+    }
+}
+
 .top-label {
     position: absolute;
     top: 40px;
