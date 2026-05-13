@@ -1,0 +1,116 @@
+:root {
+    --bg-color: #F6F7F9;
+    --text-black: #161A1D;
+    --brand-blue: #0C8CE9;
+    --brand-green: #10B981;
+    --brand-red: #FF5A5F;
+    --brand-yellow: #FFE135;
+    
+    --font-main: 'Inter', sans-serif;
+    --font-hand-bold: 'Shadows Into Light', cursive;
+    --font-hand-gochi: 'Gochi Hand', cursive;
+    --font-display: 'ADLaM Display', system-ui;
+    --font-outfit: 'Outfit', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-black);
+    font-family: var(--font-main);
+    width: 100%;
+    height: 100svh;
+    overflow: hidden;
+    position: relative;
+}
+
+#dot-background {
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 45px 45px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    padding: 2rem;
+}
+
+.top-label {
+    position: absolute;
+    top: 40px;
+    font-family: var(--font-outfit);
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    opacity: 0.8;
+}
+
+.bottom-label {
+    position: absolute;
+    bottom: 40px;
+    font-family: var(--font-outfit);
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+}
+
+.hero-title-wrapper {
+    text-align: center;
+    max-width: 90vw;
+}
+
+#hero-title {
+    font-size: clamp(3rem, 12vw, 8rem);
+    font-weight: 800;
+    line-height: 0.9;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+#hero-title .line {
+    display: block;
+}
+
+#hero-title span.char {
+    display: inline-block;
+    transition: font-family 0.1s ease;
+    min-width: 0.6em; /* Prevent layout shift during font cycling */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .top-label, .bottom-label {
+        font-size: 0.9rem;
+    }
+    
+    #hero-title {
+        font-size: clamp(2.5rem, 15vw, 5rem);
+    }
+
+    /* Prevent stickers from flying too far out on mobile */
+    .sticker {
+        max-width: 40vw;
+    }
+}
+
+/* Ensure the container scales but keeps things visible */
+.hero-container {
+    overflow: hidden;
+    max-width: 100vw;
+}
