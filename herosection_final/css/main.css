@@ -113,10 +113,19 @@ body {
     .sticker {
         max-width: 40vw;
     }
+    .pen {
+        width: 80vw;
+    }
 }
 
 /* Ensure the container scales but keeps things visible */
 .hero-container {
     overflow: hidden;
     max-width: 100vw;
+}
+
+@media (max-width: 768px) {
+    .invisible-on-mobile {
+        display: none;
+    }
 }
