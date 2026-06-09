@@ -113,7 +113,7 @@
   margin: 0 0 0 207px;
   font: 700 48px/1.25 Outfit, Helvetica, Arial, serif;
   color: #161a1d;
-  font-size: clamp(3rem, 12vw, 8rem);
+  font-size: clamp(3rem, 12vw, 5rem);
 }
 @media (max-width: 991px) {
   .about__about_title {
