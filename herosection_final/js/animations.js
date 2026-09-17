@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Floating animation for stickers
-    document.querySelectorAll('.float-anim').forEach((el, index) => {
+    document.querySelectorAll('.float-anim:not(.draggable)').forEach((el, index) => {
         gsap.to(el, {
             y: "random(-15, 15)",
             x: "random(-10, 10)",

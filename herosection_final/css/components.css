@@ -2,14 +2,19 @@
     position: absolute;
     cursor: grab;
     user-select: none;
+    touch-action: none;
     z-index: 10;
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .sticker:active {
     cursor: grabbing;
-    transform: scale(1.05) !important;
     z-index: 100;
+}
+
+.sticker img {
+    -webkit-user-drag: none;
+    user-drag: none;
 }
 
 /* Pills */
@@ -47,6 +52,7 @@
 
 .welcome-note {
     transform: rotate(-8deg);
+    z-index: 20;
 }
 
 /* 3D Symbols */

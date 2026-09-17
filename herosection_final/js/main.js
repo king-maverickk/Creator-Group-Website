@@ -22,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
         edgeResistance: 0.65,
         bounds: ".hero-container",
         inertia: true,
+        allowNativeTouchScrolling: false,
         onPress: function() {
+            gsap.killTweensOf(this.target);
             gsap.to(this.target, { scale: 1.1, duration: 0.2 });
         },
         onRelease: function() {
