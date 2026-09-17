@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    Draggable.create(".draggable:not(.who-you-are__secondary_img)", {
+    Draggable.create(".draggable:not(.who-you-are__secondary_img):not(.about-draggable)", {
         ...draggableOptions,
         bounds: ".hero-container"
     });
@@ -39,6 +39,11 @@ document.addEventListener('DOMContentLoaded', () => {
     Draggable.create(".who-you-are__secondary_img", {
         ...draggableOptions,
         bounds: ".who-you-are__image_and_text_group"
+    });
+
+    Draggable.create(".about-draggable", {
+        ...draggableOptions,
+        bounds: ".about__about_container"
     });
 
     // Add random slight rotation to stickers on load

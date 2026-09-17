@@ -16,6 +16,15 @@
   padding: 24px 12px;
   overflow: hidden;
 }
+.about-draggable {
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.about-draggable:active {
+  cursor: grabbing;
+}
 @media (max-width: 383px) {
   .about__about_container {
     padding-right: 8px;
