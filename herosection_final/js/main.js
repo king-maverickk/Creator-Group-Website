@@ -17,10 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize GSAP Draggable for all draggable elements
     gsap.registerPlugin(Draggable);
     
-    Draggable.create(".draggable", {
+    const draggableOptions = {
         type: "x,y",
         edgeResistance: 0.65,
-        bounds: ".hero-container",
         inertia: true,
         allowNativeTouchScrolling: false,
         onPress: function() {
@@ -30,6 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
         onRelease: function() {
             gsap.to(this.target, { scale: 1, duration: 0.2 });
         }
+    };
+
+    Draggable.create(".draggable:not(.who-you-are__secondary_img)", {
+        ...draggableOptions,
+        bounds: ".hero-container"
+    });
+
+    Draggable.create(".who-you-are__secondary_img", {
+        ...draggableOptions,
+        bounds: ".who-you-are__image_and_text_group"
     });
 
     // Add random slight rotation to stickers on load

@@ -49,6 +49,13 @@
   height: 153px;
   -o-object-fit: cover;
   object-fit: cover;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.who-you-are__secondary_img:active {
+  cursor: grabbing;
 }
 @media (max-width: 575px) {
   .who-you-are__secondary_img {
