@@ -11,8 +11,14 @@
 .who-you-are__main_banner {
   position: absolute;
   top: 10.03%;
-  right: 20.7%;
-  width: 71px;
+  right: 5.7%;
+  width: 145px;
+
+  @media (max-width: 479px) {
+    top: 0.03%;
+    right: 0.7%;
+    width: 71px;
+  }
 }
 .who-you-are__image_and_text_group {
   position: relative;
