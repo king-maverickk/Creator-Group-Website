@@ -54,3 +54,67 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+    // AI ≠ community: a soft AI-chat-style echo response moment.
+    const aiTrigger = document.querySelector('.ai-community-trigger');
+    const aiOverlay = document.getElementById('ai-echo-overlay');
+    const aiParticles = document.getElementById('ai-echo-particles');
+    const aiOrigin = document.getElementById('ai-echo-origin');
+    const aiClose = document.querySelector('.ai-echo-close');
+    const aiReplyPhrases = ['Same Same Same', "You're right", 'Read this', 'Read this', 'No read this', 'Thinking...'];
+    const aiReplies = Array.from({ length: 42 }, (_, index) => aiReplyPhrases[index % aiReplyPhrases.length]);
+
+    if (aiTrigger && aiOverlay && aiParticles && aiOrigin) {
+        let replayTimer;
+        const randomBetween = (min, max) => Math.random() * (max - min) + min;
+
+        function spawnAiEcho() {
+            window.clearTimeout(replayTimer);
+            aiParticles.replaceChildren();
+            aiOrigin.classList.remove('is-thinking');
+
+            aiReplies.forEach((reply, index) => {
+                const particle = document.createElement('div');
+                particle.className = 'ai-echo-particle';
+                particle.style.setProperty('--left', `${randomBetween(9, 91)}%`);
+                particle.style.setProperty('--top', `${randomBetween(16, 83)}%`);
+                particle.style.setProperty('--drift-x', `${randomBetween(-24, 24)}px`);
+                particle.style.setProperty('--drift-y', `${randomBetween(-18, 18)}px`);
+                particle.style.setProperty('--rotation', `${randomBetween(-18, 18)}deg`);
+                particle.style.setProperty('--duration', `${randomBetween(1.65, 2.35)}s`);
+                particle.style.setProperty('--delay', `${index * 80}ms`);
+                particle.innerHTML = `<span class="particle-model">AI Model</span><span class="particle-bubble"><span class="particle-message">${reply}</span></span>`;
+                aiParticles.appendChild(particle);
+            });
+
+            replayTimer = window.setTimeout(() => {
+                if (aiOverlay.classList.contains('is-visible')) spawnAiEcho();
+            }, 3400);
+        }
+
+        function openAiEcho() {
+            aiOverlay.classList.add('is-visible');
+            aiOverlay.setAttribute('aria-hidden', 'false');
+            spawnAiEcho();
+            window.setTimeout(() => aiClose && aiClose.focus(), 80);
+        }
+
+        function closeAiEcho() {
+            aiOverlay.classList.remove('is-visible');
+            aiOverlay.setAttribute('aria-hidden', 'true');
+            window.clearTimeout(replayTimer);
+            aiParticles.replaceChildren();
+            aiTrigger.focus();
+        }
+
+        aiTrigger.addEventListener('click', openAiEcho);
+        aiClose && aiClose.addEventListener('click', closeAiEcho);
+        aiOverlay.addEventListener('click', (event) => {
+            if (event.target === aiOverlay || event.target.classList.contains('ai-echo-backdrop')) closeAiEcho();
+            else if (event.target.closest('.ai-echo-stage') && !event.target.closest('.ai-echo-close')) spawnAiEcho();
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && aiOverlay.classList.contains('is-visible')) closeAiEcho();
+        });
+    }
