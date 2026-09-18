@@ -677,17 +677,12 @@
 .ai-echo-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(247, 246, 241, .76);
-  backdrop-filter: blur(12px) saturate(.85);
 }
 .ai-echo-stage {
   position: relative;
-  width: min(760px, calc(100vw - 32px));
-  height: min(600px, calc(100vh - 48px));
+  width: 100vw;
+  height: 100svh;
   overflow: hidden;
-  border: 1px solid rgba(22, 26, 29, .14);
-  border-radius: 28px;
-  background: linear-gradient(145deg, rgba(255,255,255,.96), rgba(235,242,246,.92));
   box-shadow: 0 30px 90px rgba(22, 26, 29, .22);
   transform: scale(.96) translateY(10px);
   transition: transform 420ms cubic-bezier(.16, 1, .3, 1);
@@ -701,15 +696,13 @@
   z-index: 4;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: end;
 }
-.ai-echo-kicker,
 .ai-echo-model-label {
   font: 700 10px/1.2 Inter, sans-serif;
   letter-spacing: .16em;
   text-transform: uppercase;
 }
-.ai-echo-kicker { color: #66717a; }
 .ai-echo-close {
   width: 32px;
   height: 32px;
@@ -817,7 +810,6 @@
   letter-spacing: .04em;
 }
 @media (max-width: 575px) {
-  .ai-echo-stage { height: min(600px, calc(100vh - 28px)); border-radius: 22px; }
   .ai-echo-topline { top: 17px; left: 18px; right: 16px; }
   .ai-echo-origin { width: min(250px, 64vw); }
   .ai-echo-particle { max-width: 170px; }
