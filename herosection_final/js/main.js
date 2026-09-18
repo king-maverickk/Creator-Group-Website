@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const aiOrigin = document.getElementById('ai-echo-origin');
     const aiClose = document.querySelector('.ai-echo-close');
     const aiReplyPhrases = ['Same Same Same', "You're right", 'Read this', 'Read this', 'No read this', 'Thinking...'];
-    const aiReplies = Array.from({ length: 42 }, (_, index) => aiReplyPhrases[index % aiReplyPhrases.length]);
+    const aiReplies = Array.from({ length: 82 }, (_, index) => aiReplyPhrases[index % aiReplyPhrases.length]);
 
     if (aiTrigger && aiOverlay && aiParticles && aiOrigin) {
         let replayTimer;
