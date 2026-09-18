@@ -681,7 +681,7 @@
 .ai-echo-stage {
   position: relative;
   width: 100vw;
-  height: 100svh;
+  height: 100dvh;
   overflow: hidden;
   box-shadow: 0 30px 90px rgba(22, 26, 29, .22);
   transform: scale(.96) translateY(10px);
