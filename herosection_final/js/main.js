@@ -77,13 +77,13 @@ document.addEventListener('DOMContentLoaded', () => {
             aiReplies.forEach((reply, index) => {
                 const particle = document.createElement('div');
                 particle.className = 'ai-echo-particle';
-                particle.style.setProperty('--left', `${randomBetween(9, 91)}%`);
-                particle.style.setProperty('--top', `${randomBetween(16, 83)}%`);
-                particle.style.setProperty('--drift-x', `${randomBetween(-24, 24)}px`);
-                particle.style.setProperty('--drift-y', `${randomBetween(-18, 18)}px`);
+                particle.style.setProperty('--left', `${randomBetween(2, 95)}%`);
+                particle.style.setProperty('--top', `${randomBetween(7, 95)}%`);
+                particle.style.setProperty('--drift-x', `${randomBetween(-34, 34)}px`);
+                particle.style.setProperty('--drift-y', `${randomBetween(-28, 28)}px`);
                 particle.style.setProperty('--rotation', `${randomBetween(-18, 18)}deg`);
                 particle.style.setProperty('--duration', `${randomBetween(1.65, 2.35)}s`);
-                particle.style.setProperty('--delay', `${index * 80}ms`);
+                particle.style.setProperty('--delay', `${index * 60}ms`);
                 particle.innerHTML = `<span class="particle-model">AI Model</span><span class="particle-bubble"><span class="particle-message">${reply}</span></span>`;
                 aiParticles.appendChild(particle);
             });
