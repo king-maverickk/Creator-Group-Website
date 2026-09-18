@@ -57,10 +57,10 @@
   font: 100px/1.19 "Gochi Hand", Helvetica, Arial, serif;
   color: white;
 }
-@media (max-width: 991px) {
+@media (min-width: 480px) and (max-width: 991px) {
   .what-we-make__info {
     align-items: flex-start;
-    font-size: 30px;
+    font-size: 72px;
   }
 }
 @media (max-width: 479px) {
